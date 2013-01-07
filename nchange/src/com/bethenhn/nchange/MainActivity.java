@@ -5,11 +5,9 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NavUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -35,12 +33,13 @@ public class MainActivity extends FragmentActivity implements
 		// For each of the sections in the app, add a tab to the action bar.
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section1)
 				.setTabListener(this));
+		
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section2)
 				.setTabListener(this));
 //		actionBar.addTab(actionBar.newTab().setText(R.string.title_section3)
 //				.setTabListener(this)); d
 	}
-
+	
 	@Override
 	public void onRestoreInstanceState(Bundle savedInstanceState) {
 		// Restore the previously serialized current tab position.
@@ -107,11 +106,22 @@ public class MainActivity extends FragmentActivity implements
 				Bundle savedInstanceState) {
 			// Create a new TextView and set its text to the fragment's section
 			// number argument value.
-			TextView textView = new TextView(getActivity());
-			textView.setGravity(Gravity.CENTER);
-			textView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
-			return textView;
+			
+			if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
+				return inflater.inflate(R.layout.home, container, false);
+			}
+				
+			else {
+				TextView textView = new TextView(getActivity());
+				textView.setGravity(Gravity.CENTER);
+				textView.setText(Integer.toString(getArguments().getInt(
+						ARG_SECTION_NUMBER)));
+				
+				return textView;
+			}
+			
+//			System.out.println("ARGU : " + getArguments().getInt(ARG_SECTION_NUMBER));
+			
 		}
 	}
 

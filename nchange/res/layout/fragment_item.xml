@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/eventImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/starbucks_event" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/eventBarcodeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_barcode" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/eventMessageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지금 스타벅스가 쏜다!"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/eventDetailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이벤트 상세정보" />
+
+    </LinearLayout>
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/eventPeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="행사기간 : " />
+
+        <TextView
+            android:id="@+id/eventPeriodTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지구 종말의 날까지" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/eventPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="행사지점 : " />
+
+        <TextView
+            android:id="@+id/eventPointTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제주 신라호텔 222호" />
+
+    </TableRow>
+
+</LinearLayout>

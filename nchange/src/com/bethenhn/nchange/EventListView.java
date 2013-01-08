@@ -50,6 +50,7 @@ public class EventListView extends ListView {
 				return ;
 			}
 			
+			// 특정 이벤트 눌렸을 시 리스너
 			selectionListener.onDataSelected(parent, v, position, id);
 			
 		}

@@ -14,34 +14,47 @@ public final class R {
         public static final int arrow_small=0x7f020000;
         public static final int button_barcode=0x7f020001;
         public static final int ic_launcher=0x7f020002;
-        public static final int sewoo=0x7f020003;
+        public static final int image_home_barcode=0x7f020003;
+        public static final int sewoo=0x7f020004;
+        public static final int starbucks_event=0x7f020005;
     }
     public static final class id {
-        public static final int Space1=0x7f070007;
-        public static final int TableRow1=0x7f070008;
-        public static final int barcodeButton=0x7f070011;
-        public static final int changeTextView=0x7f070009;
+        public static final int Space1=0x7f070008;
+        public static final int TableRow1=0x7f070009;
+        public static final int barcodeButton=0x7f070012;
+        public static final int changeTextView=0x7f07000a;
         public static final int container=0x7f070000;
-        public static final int currencyTextView=0x7f07000a;
+        public static final int currencyTextView=0x7f07000b;
+        public static final int eventBarcodeButton=0x7f070014;
+        public static final int eventDetailTextView=0x7f070016;
+        public static final int eventImageView=0x7f070013;
         public static final int eventItemListView=0x7f070006;
+        public static final int eventMessageTextView=0x7f070015;
+        public static final int eventPeriod=0x7f070018;
+        public static final int eventPeriodTextView=0x7f070019;
+        public static final int eventPoint=0x7f07001a;
+        public static final int eventPointTextView=0x7f07001b;
+        public static final int frag_content=0x7f070007;
         public static final int iconArrow=0x7f070005;
         public static final int iconItem=0x7f070001;
         public static final int itemDuration=0x7f070002;
         public static final int itemEventTitle=0x7f070003;
         public static final int itemParticipant=0x7f070004;
-        public static final int menu_settings=0x7f070012;
-        public static final int nameTextView=0x7f07000c;
-        public static final int pointCurrencyTextView=0x7f07000f;
-        public static final int pointIsTextView=0x7f07000d;
-        public static final int pointTextView=0x7f07000e;
-        public static final int tableRow2=0x7f07000b;
-        public static final int tableRow3=0x7f070010;
+        public static final int menu_settings=0x7f07001c;
+        public static final int nameTextView=0x7f07000d;
+        public static final int pointCurrencyTextView=0x7f070010;
+        public static final int pointIsTextView=0x7f07000e;
+        public static final int pointTextView=0x7f07000f;
+        public static final int tableRow1=0x7f070017;
+        public static final int tableRow2=0x7f07000c;
+        public static final int tableRow3=0x7f070011;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int eventlistitem=0x7f030001;
         public static final int fragment_event=0x7f030002;
         public static final int fragment_home=0x7f030003;
+        public static final int fragment_item=0x7f030004;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;

@@ -11,32 +11,36 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int button_barcode=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
+        public static final int arrow_small=0x7f020000;
+        public static final int button_barcode=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int sewoo=0x7f020003;
     }
     public static final class id {
-        public static final int Space1=0x7f070005;
-        public static final int TableRow1=0x7f070006;
-        public static final int barcodeButton=0x7f07000f;
-        public static final int changeTextView=0x7f070007;
+        public static final int Space1=0x7f070006;
+        public static final int TableRow1=0x7f070007;
+        public static final int barcodeButton=0x7f070010;
+        public static final int changeTextView=0x7f070008;
         public static final int container=0x7f070000;
-        public static final int currencyTextView=0x7f070008;
+        public static final int currencyTextView=0x7f070009;
+        public static final int iconArrow=0x7f070005;
         public static final int iconItem=0x7f070001;
         public static final int itemDuration=0x7f070002;
         public static final int itemEventTitle=0x7f070003;
         public static final int itemParticipant=0x7f070004;
-        public static final int menu_settings=0x7f070010;
-        public static final int nameTextView=0x7f07000a;
-        public static final int pointCurrencyTextView=0x7f07000d;
-        public static final int pointIsTextView=0x7f07000b;
-        public static final int pointTextView=0x7f07000c;
-        public static final int tableRow2=0x7f070009;
-        public static final int tableRow3=0x7f07000e;
+        public static final int menu_settings=0x7f070011;
+        public static final int nameTextView=0x7f07000b;
+        public static final int pointCurrencyTextView=0x7f07000e;
+        public static final int pointIsTextView=0x7f07000c;
+        public static final int pointTextView=0x7f07000d;
+        public static final int tableRow2=0x7f07000a;
+        public static final int tableRow3=0x7f07000f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int eventlistitem=0x7f030001;
-        public static final int home=0x7f030002;
+        public static final int event=0x7f030001;
+        public static final int eventlistitem=0x7f030002;
+        public static final int home=0x7f030003;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;

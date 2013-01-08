@@ -13,6 +13,7 @@ public class EventItem {
 		public EventItem(Drawable eventIcon, String duration, String eventTitle, String eventParticipant ) {
 			
 			this.setEventIcon(eventIcon);
+			this.setDuration(duration);
 			this.setEventTitle(eventTitle);
 			this.setEventParticipant(eventParticipant);
 			

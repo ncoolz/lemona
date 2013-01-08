@@ -1,5 +1,8 @@
 package com.bethenhn.nchange;
 
+import java.util.Iterator;
+import java.util.List;
+
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -14,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.bethenhn.nchange.db.EventListDao;
 import com.bethenhn.nchange.debug.DebugSetting;
 import com.bethenhn.nchange.model.EventItem;
 
@@ -22,11 +26,14 @@ public class EventListFragment extends Fragment {
 	EventListView listView;
 	EventListAdapter listAdapter;
 
+	EventListDao dao;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// final Context context = inflater.getContext();
 
+		
 		if (DebugSetting.IS_DEBUG == true) {
 			Log.d(DEBUG_TAG, "on create view started");
 
@@ -39,7 +46,8 @@ public class EventListFragment extends Fragment {
 		}
 
 		final Context context = view.getContext();
-
+		dao = new EventListDao(context);
+		
 		if (DebugSetting.IS_DEBUG == true) {
 			Log.d(DEBUG_TAG, "get context");
 
@@ -50,12 +58,21 @@ public class EventListFragment extends Fragment {
 
 		Resources res = this.getResources();
 
-		// test cases
-		listAdapter.addItem(new EventItem(res.getDrawable(R.drawable.sewoo),
+		// sample cases
+		dao.open();
+		List<EventItem> listOfItems = dao.getEventList(0, dao.NO_LIMIT);
+		dao.close();
+		
+		Iterator<EventItem> iter = listOfItems.iterator();
+		while ( iter.hasNext()) {
+			EventItem item = iter.next();
+			listAdapter.addItem(item);
+		}
+		/*listAdapter.addItem(new EventItem(res.getDrawable(R.drawable.sewoo),
 				"2013.03.02 ~ 2013.04.02", "스타벅스 1+1 이벤트", "으아호로로로로 롤로"));
 		listAdapter.addItem(new EventItem(res.getDrawable(R.drawable.sewoo),
 				"2013.02.11 ~ 2013.01.03", "바나나맛 우유가 4만원", "세븐일레븐트웰브"));
-		//
+		//*/
 
 		if (DebugSetting.IS_DEBUG == true) {
 			Log.d(DEBUG_TAG, "items are added.");

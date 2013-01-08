@@ -7,16 +7,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="vertical" >
-
-         
-        </LinearLayout>
 
     </LinearLayout>
 
@@ -28,7 +20,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/changeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="000"
@@ -36,7 +28,7 @@
             android:textSize="50dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/currencyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="원"
@@ -51,22 +43,30 @@
         android:gravity="center" >
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="정우용님의 포인트는"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="정우용"
+            android:textAppearance="?android:attr/textAppearanceLarge" 
             android:textSize="15dp"/>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/pointIsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="님의 포인트는"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/pointTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="6190"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/pointCurrencyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Points"
@@ -81,7 +81,7 @@
         android:gravity="center" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/barcodeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_barcode" />

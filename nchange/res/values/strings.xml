@@ -2,10 +2,8 @@
 <resources>
 
     <string name="app_name">nchange</string>
-    <string name="title_section3">Section 3</string>
     <string name="title_section2">Event</string>
     <string name="title_section1">Home</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
 
 </resources>

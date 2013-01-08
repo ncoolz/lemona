@@ -3,7 +3,7 @@ package com.bethenhn.nchange;
 import com.bethenhn.nchange.debug.DebugSetting;
 import com.bethenhn.nchange.model.EventItem;
 
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
-public class EventActivity extends Fragment {
+public class EventListFragment extends Fragment {
 	static final String DEBUG_TAG = "EVENT_FRAGMENT";
 	EventListView listView;
 	EventListAdapter listAdapter;
@@ -26,7 +26,7 @@ public class EventActivity extends Fragment {
 			
 		}
 		
-		View view = inflater.inflate(R.layout.event, container,false);
+		View view = inflater.inflate(R.layout.fragment_event, container,false);
 		if ( null == view ) {
 			return null;
 		}
@@ -38,7 +38,7 @@ public class EventActivity extends Fragment {
 			
 		}
 		
-		listView = new EventListView(context);
+//		listView = new EventListView(context);
 		listAdapter = new EventListAdapter(context);
 		
 		Resources res = this.getResources();
@@ -52,6 +52,9 @@ public class EventActivity extends Fragment {
 			Log.d(DEBUG_TAG, "items are added.");
 			
 		}		
+		
+		listView = (EventListView) view.findViewById(R.id.eventItemListView);
+		
 		listView.setAdapter(listAdapter);
 		listView.setOnDataSelectionListener( new OnDataSelectionListener() {
 
@@ -72,7 +75,8 @@ public class EventActivity extends Fragment {
 			
 		}		
 		//view.set
-		container.addView(listView);
+//		container.addView(listView);
+		
 		return view;
 		
 		//return container;

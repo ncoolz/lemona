@@ -1,19 +1,15 @@
 package com.bethenhn.nchange;
 
 import android.app.ActionBar;
+import android.app.ActionBar.Tab;
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
-public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener {
+public class MainActivity extends FragmentActivity {
 
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
@@ -30,14 +26,58 @@ public class MainActivity extends FragmentActivity implements
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		// For each of the sections in the app, add a tab to the action bar.
-		actionBar.addTab(actionBar.newTab().setText(R.string.title_section1)
-				.setTabListener(this));
+		// 홈 탭 추가
+		Tab homeTab = actionBar.newTab();
+		homeTab.setText(R.string.title_section1);
+		homeTab.setTabListener(new ProductTabListener(this, HomeFragment.class.getName()));
+		actionBar.addTab(homeTab);
 		
-		actionBar.addTab(actionBar.newTab().setText(R.string.title_section2)
-				.setTabListener(this));
+		// 이벤트 리스트 탭 추가
+		Tab eventListTab = actionBar.newTab();
+		eventListTab.setText(R.string.title_section2);
+		eventListTab.setTabListener(new ProductTabListener(this, EventListFragment.class.getName()));
+		actionBar.addTab(eventListTab);
+				
 	}
-	
+
+	/**
+	 * 탭을 선택했을 때 처리할 리스너 정의
+	 */
+	private class ProductTabListener implements ActionBar.TabListener {
+		private Fragment mFragment;
+		private final Activity mActivity;
+		private final String mFragName;
+
+		public ProductTabListener(Activity activity, String fragName) {
+			mActivity = activity;
+			mFragName = fragName;
+		}
+
+		@Override
+		public void onTabReselected(Tab tab, FragmentTransaction arg1) {
+
+		}
+
+		/**
+		 * 탭이 선택되었을 때
+		 */
+		@Override
+		public void onTabSelected(Tab tab, FragmentTransaction ft) {
+			mFragment = Fragment.instantiate(mActivity, mFragName);
+			ft.add(android.R.id.content, mFragment);
+		}
+
+		/**
+		 * 탭 선택이 해제되었을 때
+		 */
+		@Override
+		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+			ft.remove(mFragment);
+			mFragment = null;
+		}
+
+	}
+
 	@Override
 	public void onRestoreInstanceState(Bundle savedInstanceState) {
 		// Restore the previously serialized current tab position.
@@ -59,81 +99,6 @@ public class MainActivity extends FragmentActivity implements
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
-	}
-
-	@Override
-	public void onTabSelected(ActionBar.Tab tab,
-			FragmentTransaction fragmentTransaction) {
-		// When the given tab is selected, show the tab contents in the
-		// container view.
-		Fragment frag;
-		if (tab.getPosition()== 1) {
-			
-			frag = new EventActivity();
-		
-		} else {
-			
-			frag = new HomeView();
-		}
-		
-		/*Fragment fragment = new DummySectionFragment();
-		Bundle args = new Bundle();
-		args.putInt(DummySectionFragment.ARG_SECTION_NUMBER,
-				tab.getPosition() + 1);
-		fragment.setArguments(args);
-		*/
-		
-		getSupportFragmentManager().beginTransaction()
-				.replace(R.id.container, frag).commit();
-	}
-
-	@Override
-	public void onTabUnselected(ActionBar.Tab tab,
-			FragmentTransaction fragmentTransaction) {
-	}
-
-	@Override
-	public void onTabReselected(ActionBar.Tab tab,
-			FragmentTransaction fragmentTransaction) {
-	}
-
-	/**
-	 * A dummy fragment representing a section of the app, but that simply
-	 * displays dummy text.
-	 */
-	public static class DummySectionFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		public static final String ARG_SECTION_NUMBER = "section_number";
-
-		public DummySectionFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			// Create a new TextView and set its text to the fragment's section
-			// number argument value.
-			
-			if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-				return inflater.inflate(R.layout.home, container, false);
-			}
-				
-			else {
-				
-				TextView textView = new TextView(getActivity());
-				textView.setGravity(Gravity.CENTER);
-				textView.setText(Integer.toString(getArguments().getInt(
-						ARG_SECTION_NUMBER)));
-				
-				return textView;
-			}
-			
-//			System.out.println("ARGU : " + getArguments().getInt(ARG_SECTION_NUMBER));
-			
-		}
 	}
 
 }

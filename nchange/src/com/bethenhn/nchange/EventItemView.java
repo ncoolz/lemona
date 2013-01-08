@@ -1,14 +1,12 @@
 package com.bethenhn.nchange;
-import com.bethenhn.nchange.model.EventItem;
-
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bethenhn.nchange.model.EventItem;
 
 public class EventItemView extends LinearLayout {
 

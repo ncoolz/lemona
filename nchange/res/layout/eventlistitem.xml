@@ -4,5 +4,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-
-</LinearLayout>
+<ImageView android:id="@+id/iconItem"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" 
+           android:padding="8dip"
+           android:layout_gravity="center_vertical" />
+	 <LinearLayout 
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:orientation="vertical" 
+	          
+	           
+	 >   
+	 	<!--  duration -->
+	 	<TextView android:id="@+id/itemDuration" 
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"	    
+	 	       android:textSize="6pt"
+	 	       
+	 	/>
+	 	<!-- event title -->
+	 	<TextView android:id="@+id/itemEventTitle" 
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"	    
+	 	       android:textSize="6pt"
+	 	       
+	 	/>
+	 	<!-- gameng -->
+	 	<TextView android:id="@+id/itemParticipant" 
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"	    
+	 	       android:textSize="6pt"
+	 	       
+	 	/>	 	
+ 	
+ 	</LinearLayout>   	
+ 
+</LinearLayout>   
